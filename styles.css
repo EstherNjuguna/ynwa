@@ -1,0 +1,77 @@
+html{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.main-header{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+    url('./img/group.webp') center/cover no-repeat;
+
+}
+.header{
+    margin:  auto;
+}
+.header h1{
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    font-weight: bolder;
+    color:#2a7c6f;
+}
+button{
+    padding: 20px;
+    margin: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2a7c6f;
+    color: white;
+    font-size: 1em;
+}
+button:hover{
+    background-color: rgba(173, 255, 47,0.5);
+}
+.container{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #2a7c6f;
+    color: white;
+    margin-top: 2em;
+}
+.mission img{
+    margin: 1.4em;
+    
+}
+.mission .button{
+    border: 2px solid white;
+border-radius: 10px;
+    cursor: pointer;
+ 
+}
+.mission h1{
+    font-size: 4em;
+}
+.mission h2{
+    font-size: 3em;
+}
+
+@media (max-width:800px){
+    html{
+margin: 10px;
+font-size: 10px;
+    }
+    .container{
+        display:block;
+        font-size: 10px; 
+    }
+    img{
+  
+        width: 80vw;
+        margin: auto;
+        
+    }
+}
