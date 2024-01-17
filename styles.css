@@ -2,6 +2,7 @@ html{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-size: 25px;
 }
 .main-header{
     height: 100vh;
@@ -13,6 +14,28 @@ html{
     background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
     url('./img/group.webp') center/cover no-repeat;
 
+}
+.logo{
+    height:3em;
+    width: 3em;
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+a{
+    text-decoration: none;
+}
+li{
+  color: #2a7c6f;
+  list-style-type: none;
+  padding:10px;
+}
+li:hover{
+  
+    background-color: rgba(42, 124, 111,0.1);
 }
 .header{
     margin:  auto;
@@ -33,20 +56,22 @@ button{
     font-size: 1em;
 }
 button:hover{
-    background-color: rgba(173, 255, 47,0.5);
+    background-color: rgba(42, 124, 111,0.1);;
 }
 .container{
     display: flex;
     justify-content: space-evenly;
     background-color: #2a7c6f;
     color: white;
-    margin-top: 2em;
+    margin: 2em;
 }
 .mission img{
-   height: 50vh;
-    width: 50vw;
-    margin: 1 rem;
+  
+    margin: 20px;
     
+}
+p{
+    margin: 10px;
 }
  .button{
     border: 2px solid white;
@@ -54,13 +79,31 @@ border-radius: 10px;
     cursor: pointer;
  
 }
-.mission h1{
-    font-size: 4em;
-}
-.mission h2{
-    font-size: 3em;
-}
 
+button a{
+    text-decoration: none;
+    color:white;
+    text-transform: uppercase;
+}
+.button:hover{
+    background-color: white;
+    color: #2a7c6f;
+}
+.mission h1{
+    font-size: 30px;
+}
+ h2{
+    font-size: 25px;
+    margin: 10px;
+}
+.classify{
+    color:#2a7c6f;
+    text-align: center;
+  
+}
+.about-us:nth-child(2){
+    margin-top: 200px;
+}
 @media (max-width:800px){
     html{
 margin: 10px;
@@ -69,11 +112,21 @@ font-size: 10px;
     .container{
         display:block;
         font-size: 10px; 
+        margin: 10px;
     }
     img{
   
         width: 80vw;
         margin: auto;
         
+    }
+    .hide ul{
+        display: block;
+    }
+    h1{
+        font-size: 20px;
+    }
+    h2{
+        font-size: 15px;
     }
 }
