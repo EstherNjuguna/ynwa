@@ -68,6 +68,13 @@ button:hover{
     background-color: #2a7c6f;
     color: white;
     margin: 2em;
+    
+}
+.container .image{
+    width: 30vw;
+    margin-left: 2em;
+    text-align: center;
+    
 }
 .mission img{
   
@@ -165,6 +172,10 @@ color: white;
   }
   form{
     color:#2a7c6f;
+  }
+  form:hover{
+    background-color: rgb(42, 124, 111,0.4);
+    padding:20px;
   }
   textarea, input{
    border:none;
