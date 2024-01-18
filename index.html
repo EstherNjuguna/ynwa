@@ -10,18 +10,25 @@
 <body>
     <h1 class="auto">YNWA</h1>
     <hr>
-    <nav class="hide">
-        <ul>
-            <img class = "logo"src="./img/Free_Sample_By_Wix.jpg" alt="logo"/>
-           <a href="./index.html"><li>Home</li></a>
-           <a href="#main-body"><li>About Us</li></a>
+    <!--<div class="hides">
+    <i class="fa-solid fa-bars" ></i>
+</div>
+-->
+    <nav >
+        <span class="menu-icon show" onclick="toggleNav()">☰</span>
+      
+        <ul class="nav-links">
+            <a href="./index.html"> <img class = "logo"src="./img/Free_Sample_By_Wix.jpg" alt="logo"/></a>
+           
+           <a href=".mission"><li>About Us</li></a>
            <a href="./blogs.html"><li>Blogs</li></a>
             <a href="#contact"><li>Contact</li></a>
+            <a href="./services.html"><li>Services</li></a>
         </ul>
     </nav>
     <div class="main-header">
     <section class="header">
-        <h1>WELCOME TO YNWA</h1>
+        <h1 >WELCOME TO YNWA</h1>
     
         <!-- <img src="./images/mental.jpg" alt="mental health written on a laptop" height="1000px"/> -->
          <button><a href="#contact">CONTACT US</a></button>
@@ -128,41 +135,48 @@
 <section>
 <h2 class="testimonial">Our testimonials</h2>
 </section>
-<h2 class="testimonial">CONTACT US</h2>
+
 <div class="rows">
     <div class="contact" id="contact">
+
+        <h2 class="testimonial">CONTACT US</h2>
             <p>Nairobi, Kenya</p>
             <p>esternjuguna@gmail.com</p>
             <p>+254724487514</p>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="#"><i class="fa-brands fa-facebook"></i></a>
     </div>
     <div class="contact">
-    <form>
+    <form id="form">
         <label for="name">Name:</label></br>
         <input type="text" id="name"placeholder="Enter your name"></br>
+        
         <label for="email">Email:</label></br>
         <input type="email" id="email"placeholder="Enter your email"></br>
+        
         <label for="phone">Phone:</label></br>
         <input type="tel" id="phone"placeholder="Enter your phone number"></br>
         <label for="subject">Message:</label></br>
         <textarea id="subject" name="subject" rows="4" cols="50"> Enter your message...
             </textarea><br>
             <input class="submit" type="submit"/>
+            <div class="alert"></div>
     </form>
 </div>
-<div class="subscribe">
+</div>
+
     <!-- <p>Subscribe Form</p>
 <p>Be the first to be updated</p>
     <input type="email" placeholder="Subscribe" />
     <input class="submit" type="submit"/>
 </div> -->
 <div class="footer">
-    <img class = "logo"src="./img/Free_Sample_By_Wix.jpg" alt="logo"/><br>
-    &copy <span class="date"></span> by YNWA <br>
-    <p>You are not alone</p>
-
-    <a href="#" class="fa fa-facebook"></a>
-<a href="#" class="fa fa-twitter"></a>
+    
+    <img class = "logo"src="./img/Free_Sample_By_Wix.jpg" alt="logo"/>
+   <span class="date"> &copy</span> by YNWA <br>
+ 
 </div>
+
  <script src="index.js"></script>
 </body>
 </html>
