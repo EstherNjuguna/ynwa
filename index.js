@@ -7,7 +7,7 @@ const hide = document.querySelector(".menu-icon")
 const nav = document.querySelector(".nav-links")
 let prompt =document.querySelector(".submit");
 let forms = document.getElementById("form");
-
+const emailFormat = /^\S+@\S+\.\S+$/;
 const slides = Array.from(document.querySelectorAll(".slide"));
 
 
@@ -28,6 +28,9 @@ prompt.addEventListener('click',(event)=>{
     alerts.style.color ="black"
     alerts.style.textTransform ="uppercase"
     alerts.style.padding ="10px"
+    const emailInput = document.querySelector("#email");
+    const email = emailInput.value.trim();
+  if (emailFormat.test(email)){
     setTimeout(() => {
     let names = document.querySelector("#name" ).value;
     if (names ===  ""){
@@ -36,12 +39,16 @@ alert("Hello,Thank you!.")
 else{
     alert(`Hello  ${names} thank you`)}
     forms.reset()
-}) 
+}) }
+else{
+  alert("Required a valid email")
+  emailInput.style.border ="solid 1px red"
+}
 })
 
 
     const services = document.querySelector(".services")  
-    console.log(services) 
+    
 services.innerHTML= `
 <p>Anxiety Handling</p>
 <img src="./img/therapy.jpg">
