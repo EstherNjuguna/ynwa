@@ -86,7 +86,7 @@ button:hover , .btn:hover{
 .mission img{
  
     margin: 20px;
-    width: 40vw;
+    width: 50vw;
     margin-top:60px;
    
 }
@@ -219,8 +219,8 @@ color: white;
     justify-content: space-evenly;
     margin: 20px;
   }
-.contact{
-    margin:20px;
+.contact.nth-child(2){
+    margin-left:40px;
 }
   .testimonial{
 
@@ -231,6 +231,7 @@ color: white;
   }
   form{
     color:#2a7c6f;
+      max-width: 500px;
   }
   form:hover{
    border: 2px solid #2a7c6f;
