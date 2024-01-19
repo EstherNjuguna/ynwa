@@ -229,7 +229,7 @@ color: white;
   #contact{
     color: #2a7c6f;
   }
-  form{
+  form, #subject{
     color:#2a7c6f;
       max-width: 500px;
   }
