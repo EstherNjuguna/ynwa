@@ -229,7 +229,7 @@ color: white;
   #contact{
     color: #2a7c6f;
   }
-  form, #subject{
+  form{
     color:#2a7c6f;
       max-width: 500px;
   }
@@ -237,6 +237,9 @@ color: white;
    border: 2px solid #2a7c6f;
     padding:20px;
   }
+ #subject{
+     max-width: 400px;
+ }
   textarea, input{
    border:none;
    border-bottom: #2a7c6f 1px solid;
