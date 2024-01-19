@@ -16,7 +16,7 @@ html{
     url('./img/group.webp') center/cover no-repeat;
 
 }
-.logo{
+.logo, .logo-main{
 width:100px;
 height:70px;
     
@@ -277,9 +277,14 @@ font-size: 10px;
         margin: auto;
         text-align: center;
      }
-     .logo{
-height: 50px;
-width:40px;
+     
+.logo{
+    display:none;
+}
+
+     .logo-foot{
+        height:30px;
+        width:40px;
      }
    /** .hide ul{
         display: flex;
@@ -320,4 +325,3 @@ width:40px;
         justify-content: center;
         margin-top: 20px;
     }
-}
