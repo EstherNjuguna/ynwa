@@ -216,8 +216,8 @@ color: white;
  
   .rows{
     display:flex;
-    justify-content: space-evenly;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    margin: 20px;
   }
   .testimonial{
 
