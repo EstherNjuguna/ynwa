@@ -94,3 +94,35 @@ function startCarousel(){
 }
 startCarousel()
 */
+const modal = document.getElementById('loginModal');
+  const openModalButtons = document.querySelectorAll('.open-modal');
+  const closeModalButton = document.querySelector('.close');
+
+  // Function to open the modal
+  function openModal() {
+    modal.style.display = 'block';
+  }
+
+  // Function to close the modal
+  function closeModal() {
+    modal.style.display = 'none';
+  }
+
+  // Event listeners for each open modal button
+  openModalButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      openModal();
+    });
+  });
+
+  // Event listener for the close modal button
+  closeModalButton.addEventListener('click', function () {
+    closeModal();
+  });
+
+  // Event listener to close the modal if the user clicks outside the modal
+  window.addEventListener('click', function (event) {
+    if (event.target == modal) {
+      closeModal();
+    }
+  });
