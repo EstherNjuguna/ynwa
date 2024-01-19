@@ -216,9 +216,12 @@ color: white;
  
   .rows{
     display:flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin: 20px;
   }
+.contact{
+    margin:20px;
+}
   .testimonial{
 
     color:#2a7c6f
