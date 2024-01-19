@@ -143,9 +143,12 @@ text-align: center;
     background-color: rgba(42, 124, 111,0.4);
 
 }
- h1{
+ .main, h1{
 text-align: center;
 color: #2a7c6f;
+}
+.main{
+    font-size: 10px;
 }
 .card-text, .card-title{
     color:#2a7c6f;
@@ -230,6 +233,16 @@ color: white;
   input:hover, textarea:hover{
     border:#2a7c6f solid 1px
   }
+  .socials{
+    display: inline-block;
+    text-align: center;
+    justify-content: space-evenly;
+    gap:20px;
+    margin-top: 20px;
+  }
+  i{
+    color: white;
+  }
 @media (max-width:800px){
     html{
 margin: 10px;
@@ -265,7 +278,8 @@ font-size: 10px;
         text-align: center;
      }
      .logo{
-        display: none;
+height: 50px;
+width:40px;
      }
    /** .hide ul{
         display: flex;
