@@ -5,6 +5,9 @@ html{
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
 }
+body{
+  margin-left: 20px;
+}
 .main-header{
     height: 100vh;
     width: 100vw;
@@ -50,6 +53,9 @@ li:hover{
 .header{
     margin:  auto;
 }
+button a{
+  text-align: center;
+}
 .header h1{
     text-transform: uppercase;
     font-size: 3.5rem;
@@ -74,7 +80,7 @@ button:hover , .btn:hover{
     background-color: #2a7c6f;
     color: white;
       margin: 1.5em;
-      max-width: fit-content;
+     width: 100vw;
     
 }
 .container .image{
@@ -111,14 +117,19 @@ button a{
     background-color: white;
     color: #2a7c6f;
 }
-.mission h1{
+.mission h1, .classify h1{
     margin-top: 50px;
     font-size: 30px;
     color: white;
 }
+.classify h1{
+  color:#2a7c6f;
+}
  h2{
     font-size: 25px;
     margin: 10px;
+    font-weight: bold;
+    text-align: center;
 }
 .classify{
     color:#2a7c6f;
@@ -128,8 +139,13 @@ button a{
 }
 .about-us{
     width: 100vw;
+    margin: 20px;
 }
-
+.about-us p{
+  margin: 10px;
+  text-align: center;
+ 
+}
 .about-us:nth-child(2){
     margin-top: 200px;
 }
@@ -219,7 +235,7 @@ color: white;
     justify-content: space-evenly;
     margin: 20px;
   }
-.contact.nth-child(2){
+.contact:nth-child(2){
     margin-left:40px;
 }
   .testimonial{
@@ -302,7 +318,7 @@ color: white;
 @media (max-width:800px){
     html{
 margin: 10px;
-font-size: 10px;
+
     }
     .menu-icon.show {
         display: block; /* Show the hamburger icon on small screens */
@@ -316,11 +332,7 @@ font-size: 10px;
         margin: 10px;
         
     }
-   .about-us {
-   
-    width:100vw;
 
-    }
     img{
   
         width: 80vw;
@@ -372,7 +384,10 @@ font-size: 10px;
         cursor: pointer;
     }
 
-    
+    .header h1{
+      overflow: hidden;
+    font-size: 40px;
+    }
    
     h1{
         font-size: 20px;
@@ -380,9 +395,15 @@ font-size: 10px;
     h2{
         font-size: 15px;
     }
-    .events,.services{
+    .events{
         display: block;
        
+    }
+    .services{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-left:50px;
+      padding: 20px;
     }
     .card-img-top{
         height: 20%;
@@ -394,5 +415,22 @@ font-size: 10px;
         font-size: 10px;
         max-width: fit-content;
     }
+    .card-text{
+      font-size: 20px;
+    }
+    input, #subject{
+      max-width: 60vw;
+    }
+    .container-2 {
+
+      width:100vw;
+  
+      }
    
+}
+@media (max-width:500px){
+  .services{
+    display:block;
+  }
+  
 }
