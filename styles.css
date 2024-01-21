@@ -422,10 +422,29 @@ margin: 10px;
     }
     .carousel-caption{
         font-size: 10px;
-        max-width: fit-content;
+        width: 80%;
+    
+    }
+    .carousel-item{
+      font-size: 10px;
+   
+    
+    }
+    .carousel-item h5{
+      font-size: 20px;
     }
     .card-text{
-      font-size: 20px;
+      font-size: 10px;
+      margin-top: 10px;
+     
+    }
+    .carousel-item .button{
+      padding:5px;
+      margin:5px;
+    }
+    .carousel-item p{
+      font-size:10px;
+      margin-bottom: 2px;
     }
     input, #subject{
       max-width: 60vw;
