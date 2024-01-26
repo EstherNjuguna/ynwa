@@ -101,7 +101,14 @@ button:hover , .btn:hover{
   
    
 }
+.login{
+ display:block;
+ padding:20px;
 
+}
+.auth-fields-and-buttons input{
+  margin: 20px;
+}
 p{
     margin: 10px;
 }
@@ -257,13 +264,16 @@ color: white;
   #contact{
     color: #2a7c6f;
   }
-  form{
+  form, .login{
     color:#2a7c6f;
       max-width: 500px;
   }
   form:hover{
    border: 2px solid #2a7c6f;
     padding:20px;
+  }
+  .auth-fields-and-buttons input, .login{
+    max-width: 500px;
   }
  #subject{
      max-width: 400px;
@@ -275,6 +285,9 @@ color: white;
   }
   input:hover, textarea:hover{
     border:#2a7c6f solid 1px
+  }
+  .hide{
+    display: none;
   }
   .socials{
     display: inline-block;
@@ -327,9 +340,55 @@ color: white;
     justify-content: center;
    align-self: center;
   }
+  .google-btn-logo{
+    height:50px;
+    width:50px;
+    background-color: transparent;
+  }
+  #logged-in-view{
+    display: flex;
+    flex-direction: column;
+  }
+  .post-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+#post-btn{
+  max-width: 50vw;
+}
+.aboutus{
+  color:#2a7c6f;
+  display:flex;
+}
+.aboutus h2{
+  color: #2a7c6f;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+.aboutus button:hover{
+  background-color: rgb(42, 124, 111,0.4);
+}
+.loginhide{
+  display: none;
+}
+.user-section #user-greeting{
+  text-align: center;
+  color: #2a7c6f;
+  font-weight: 900;
+}
+@media (max-width:1000px){
+  .services{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left:50px;
+    padding: 20px;
+  }
+}
 @media (max-width:800px){
     html{
-margin: 10px;
+margin: 20px;
 
     }
     .menu-icon.show {
@@ -342,16 +401,19 @@ margin: 10px;
         display:block;
       padding:10px;
         margin: 10px;
-        
+      width:100vw
     }
     .mission{
-      width: 100vw;
+
       justify-content: space-evenly;
       margin:10px;
     }
+    .container p{
+      width:60vw;
+    }
     img{
   
-        width: 80vw;
+      width:60vw;
       
         
     }
@@ -462,8 +524,12 @@ margin: 10px;
       width:100vw;
   
       }
+      .aboutus{
+        display: block;
+      }
    
 }
+
 @media (max-width:500px){
   .services{
     display:block;

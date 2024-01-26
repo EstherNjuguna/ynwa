@@ -1,11 +1,10 @@
-
 const datestr = document.querySelector(".date")
 const date =new Date()
 const year = date.getFullYear()
-datestr.innerText += year
+datestr.innerHTML += year
 const hide = document.querySelector(".menu-icon")
 const nav = document.querySelector(".nav-links")
-let prompt =document.querySelector(".submit");
+const prompt =document.querySelector("#submit");
 let forms = document.getElementById("form");
 const emailFormat = /^\S+@\S+\.\S+$/;
 const slides = Array.from(document.querySelectorAll(".slide"));
@@ -30,8 +29,8 @@ prompt.addEventListener('click',(event)=>{
     alerts.style.padding ="10px"
     const emailInput = document.querySelector("#email");
     const email = emailInput.value.trim();
-  if (emailFormat.test(email)){
-    setTimeout(() => {
+    const subject = document.getElementById("subject").value;
+  
     let names = document.querySelector("#name" ).value;
     if (names ===  ""){
 alert("Hello,Thank you!.")
@@ -39,23 +38,19 @@ alert("Hello,Thank you!.")
 else{
     alert(`Hello  ${names} thank you`)}
     forms.reset()
-}) }
-else{
-  alert("Required a valid email")
-  emailInput.style.border ="solid 1px red"
-}
-})
 
+    }
+)
 
     const services = document.querySelector(".services")  
     
-services.innerHTML= `
+/**services.innerHTML= `
 <p>Anxiety Handling</p>
 <img src="./img/therapy.jpg">
 <p>1 hour</p>
 <p>Price: 1000ksh.</p>
 `
-
+*/
 //carousel
 /** 
 let counter = 0;
@@ -101,35 +96,4 @@ function startCarousel(){
 }
 startCarousel()
 */
-const modal = document.getElementById('loginModal');
-  const openModalButtons = document.querySelectorAll('.open-modal');
-  const closeModalButton = document.querySelector('.close');
 
-  // Function to open the modal
-  function openModal() {
-    modal.style.display = 'block';
-  }
-
-  // Function to close the modal
-  function closeModal() {
-    modal.style.display = 'none';
-  }
-
-  // Event listeners for each open modal button
-  openModalButtons.forEach(function (button) {
-    button.addEventListener('click', function () {
-      openModal();
-    });
-  });
-
-  // Event listener for the close modal button
-  closeModalButton.addEventListener('click', function () {
-    closeModal();
-  });
-
-  // Event listener to close the modal if the user clicks outside the modal
-  window.addEventListener('click', function (event) {
-    if (event.target == modal) {
-      closeModal();
-    }
-  });

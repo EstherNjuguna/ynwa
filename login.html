@@ -5,80 +5,343 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
-<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
-
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css">
-    <script type="module">
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
-      //import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"
-      //import {  createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.esm.js';
-      import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
-
-    
-   
-
-      const firebaseConfig = {
-        apiKey: "AIzaSyBZKPmbAW5USn3l8x-cEtuwIF50CCFSgXQ",
-        authDomain: "yana-d63b5.firebaseapp.com",
-        projectId: "yana-d63b5",
-        storageBucket: "yana-d63b5.appspot.com",
-        messagingSenderId: "545451701439",
-        appId: "1:545451701439:web:501c16665132ce53b8420a",
-        measurementId: "G-NSP85GLCFJ"
-      };
-    
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
-      // Initialize the FirebaseUI Widget using Firebase.
-var ui = new firebaseui.auth.AuthUI(firebase.auth());
-
-let auth = getAuth();
-let email =document.querySelector("#email")
-let password =document.querySelector("#password")
-let submit =document.querySelector("#button")
-let names =document.querySelector("#name")
-
-
-const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent the default form submission behavior
-  
-    createUserWithEmailAndPassword( email.value, password.value)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.error(error.message);
-      });
-  };
-  
-  submit.addEventListener("click", handleSubmit);
-  
-    </script>
-</head>
+ 
 </head>
 <body>
-    <form  class="hide">
-      <label for="email">Email:</label></br>
-                <input type="email" id="email"placeholder="Enter your email" required></br>
+    <nav >
+        <span class="menu-icon show" onclick="toggleNav()">☰</span>
+        <a href="./index.html"> <img class = "logo logo-main img-fluid" src="./img/Free_Sample_By_Wix.jpg" alt="logo"/></a>
+        <ul class="nav-links" >
+            <a href="./index.html"  title="home"><li>Home</li></a>
+           <a href="./aboutus.html" title="about"><li>About Us</li></a>
+           <a href="./blogs.html" title="blogs"><li>Blogs</li></a>
+            <!-- <a href="#contact" title="contact"><li>Contact</li></a> -->
+            <a href="./services.html" title="services"><li>Services</li></a>
+        </ul>
+    </nav>
+<section id="logged-out-view">
+  <div class="login">
+    
+    <div id="login">
+      <div class="provider-buttons">
+        
+          <button id="sign-in-with-google-btn" class="provider-btn">
+              <img src="./img/google.jpeg" class="google-btn-logo img-fluid" alt="google logo">
+              Sign in with Google
+          </button>
+          <p class="fs-1">OR</p>
+          <hr>
+      </div>
+     
+     
+      <div class="auth-fields-and-buttons">
+          <input id="email-input" type="email" placeholder="Email" required><br>
+          <input id="password-input" type="password" placeholder="Password" required><br>
+          <!--<input id="confirm-password-input" type="password" placeholder="Confirm Password" required><br> -->
+          <button id="sign-in-btn" class="primary-btn" type="button">Sign in</button>
+          <a href="#signup"><button class="create-account">Create Account</button></a>
+      </div>
+      </div>
+  </div>
+  <div class=" signup">
+      <div id="signup" class="loginhide">
+        <div class="provider-buttons">
+            <button id="sign-up-with-google-btn" class="provider-btn">
+                <img src="./img/google.jpeg" class="google-btn-logo img-fluid" alt="google logo">
+                Sign Up with Google
+            </button>
+            <p class="fs-1">OR</p>
+
+            <hr>
+        </div>
+       
+        <input id="signup-email-input"type="email" placeholder="Email" required><br>
+        <input id="signup-password-input" type="password" placeholder="Password" required><br>
+        <input id="signup-confirm-password-input" type="password" placeholder="Confirm Password" required><br>
+        <button id="create-account-btn" class="secondary-btn">Create Account</button>
+       <a href="#login"> <button id="sign-btn" class="primary-btn" type="button">Sign In</button></a>
+      </div>
+  </div>
+</section>
+
+<section id="logged-in-view">
+  
+    <nav>
+        <button id="sign-out-btn" class="icon-btn">
+            <i class="fa-solid fa-circle-xmark"></i> Log Out
+        </button>
+        
+    </nav>
+    <div class="app-container">
+        <div class="user-section">
+            <img id="user-profile-picture" src="./img/Free_Sample_By_Wix.jpg" class="img-fluid">
+            <h2 id="user-greeting"></h2>
+        </div>
+  </div>
+  <div class="post-section">
+    <textarea id="post-input" placeholder="Write down how you're feeling..."></textarea>
+    <button id="post-btn" class="primary-btn">Post</button>
+</div>
+</section>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
+        import { getAuth, createUserWithEmailAndPassword ,GoogleAuthProvider,signOut, signInWithEmailAndPassword, setPersistence, browserSessionPersistence, onAuthStateChanged,signInWithPopup} from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+        import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js';
+
+import { collection, addDoc,  serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js'; 
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+                apiKey: "AIzaSyBZKPmbAW5USn3l8x-cEtuwIF50CCFSgXQ",
+                authDomain: "yana-d63b5.firebaseapp.com",
+                databaseURL: "https://yana-d63b5-default-rtdb.firebaseio.com",
+                projectId: "yana-d63b5",
+                storageBucket: "yana-d63b5.appspot.com",
+                messagingSenderId: "545451701439",
+                appId: "1:545451701439:web:501c16665132ce53b8420a",
+                measurementId: "G-NSP85GLCFJ"
+              };
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth(app)
+        const provider = new GoogleAuthProvider();
+        const db = getFirestore(app);
+
+        const viewLoggedOut = document.getElementById("logged-out-view")
+    
+  const viewLoggedIn = document.getElementById("logged-in-view")
+  
+  const signInWithGoogleButtonEl = document.getElementById("sign-in-with-google-btn")
+  
+  const emailInputEl = document.getElementById("email-input")
+  const passwordInputEl = document.getElementById("password-input")
+  
+  const signInButtonEl = document.getElementById("sign-in-btn")
+  const createAccountButtonEl = document.getElementById("create-account-btn")
+  const createEmailInputEl = document.getElementById("signup-email-input")
+  const createPasswordInputEl = document.getElementById("signup-password-input")
+  const confirmPasswordInputEl = document.getElementById("signup-confirm-password-input")
+  const createButtonEl = document.querySelector(".create-account")
+  const signUp = document.querySelector('#signup')
+  const signUpGoogle = document.querySelector("#sign-up-with-google-btn")
+  const login = document.querySelector(".auth-fields-and-buttons")
+  const googleIcon = document.querySelector(".provider-buttons")
+  const returnSignIn = document.querySelector("#sign-btn")
+  const signOutbutton = document.querySelector("#sign-out-btn")
+  const userProfilePictureEl = document.getElementById("user-profile-picture")
+  const greetUser = document.querySelector("#user-greeting")
+ 
+  /* == UI - Event Listeners == */
+  returnSignIn.addEventListener("click", ()=>{
+    signUp.classList.toggle("hide")
+    login.style.display="block"
+    googleIcon.style.display="block" 
+  })
+  signInWithGoogleButtonEl.addEventListener("click", authSignInWithGoogle)
+  
+  signInButtonEl.addEventListener("click", authSignInWithEmail)
+  createAccountButtonEl.addEventListener("click", authCreateAccountWithEmail)
+  createButtonEl.addEventListener("click",()=>{
+    signUp.classList.toggle("hide")
+    login.style.display="none"
+    googleIcon.style.display="none"
+  })
+  /* === Main Code === */
+  
+  showLoggedOutView()
+  
+  /* === Functions === */
+  
+  /* = Functions - Firebase - Authentication = */
+  signUpGoogle.addEventListener("click",authSignInWithGoogle)
+  
+  function authSignInWithEmail() {
+    const email = emailInputEl.value
+    const password = passwordInputEl.value
+  
+    signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            clearAuthFields()
+            showLoggedInView()
+        })
+        .catch((error) => {
+            alert(error.message) 
+        })
+  }
+
+  function authCreateAccountWithEmail() {
+      const email = createEmailInputEl.value;
+      const password = createPasswordInputEl.value;
+      const conpassword = confirmPasswordInputEl .value;
+      if (password !== conpassword) {
+                alert("Passwords do not match. Please try again.");
+                return;
+            }
+      createUserWithEmailAndPassword(auth, email, password,conpassword)
+        .then((userCredential) => {
+            clearAuthFields()
+            showLoggedInView()
+        })
+        .catch((error) => {
+            alert(error.message) 
+        })
+       
+}
+  
+setPersistence(auth, browserSessionPersistence)
+    .then(() => {
+        const email = createEmailInputEl.value;
+      const password = createPasswordInputEl.value;
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
                 
-                <label for="phone">Phone:</label></br>
-                <input type="tel" id="phone"placeholder="Enter your phone number" required></br>
-                <label for="subject">Password:</label></br>
-                <input type="password" id="password">
-            
-                  <button type="submit" id="button">Log In</button>
-                    
-            </form>
-   
-                
-                
-            <script  src="index.js"></script>
-            
+            })
+            .catch((error) => {
+                ("Error signing in:", error.message);
+            });
+    })
+    .catch((error) => {
+        console.error("Error setting persistence:", error.message);
+    });
+
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            showLoggedInView();
+            showProfilePicture(userProfilePictureEl, user)
+        
+        } else {
+            showLoggedOutView();
+        }
+    });
+
+    // Add event listener for sign-out button
+    signOutbutton.addEventListener("click", () => {
+        const email = createEmailInputEl.value;
+        signOut(auth)
+    
+            .then(() => {
+                alert("Signed out successfully");
+            })
+            .catch((error) => {
+                alert("Error signing out:", error.message);
+            });
+    });
+//signOutbutton.addEventListener("click",signOutApp() )
+function authSignInWithGoogle(e) {
+    e.preventDefault()
+            signInWithPopup(auth, provider)
+                .then((result) => {
+                    // This gives you a Google Access Token. You can use it to access the Google API.
+                    const credential = GoogleAuthProvider.credentialFromResult(result)
+                    const token = credential.accessToken
+                    // The signed-in user info.
+                    const user = result.user
+                    // IdP data available using getAdditionalUserInfo(result)
+                    // ...
+                }).catch((error) => {
+                    // Handle Errors here.
+                   // const errorCode = error.code
+                    const errorMessage = error.message
+                    // The email of the user's account used.
+                    const email = error.customData.email
+                    // The AuthCredential type that was used.
+                    const credential = GoogleAuthProvider.credentialFromError(error)
+                    // ...
+                })
+        }
+
+  
+  /* == Functions - UI Functions == */
+  function showLoggedOutView() {
+    hideView(viewLoggedIn)
+    showView(viewLoggedOut)
+}
+
+function showLoggedInView() {
+    hideView(viewLoggedOut)
+    showView(viewLoggedIn)
+}
+
+function showView(view) {
+    view.style.display = "flex" 
+}
+
+function hideView(view) {
+    view.style.display = "none"
+}
+function clearInputField(field) {
+	field.value = ""
+}
+
+function clearAuthFields() {
+	clearInputField(emailInputEl)
+	clearInputField(passwordInputEl)
+}
+function capitalizeFirstLetter(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function showProfilePicture(imgElement, user) {
+    const greetUser = document.querySelector("#user-greeting")
+    const photoURL = user.photoURL
+    const displayName = user.displayName ? user.displayName.split(" ") : [];
+  
+    const email = document.getElementById("email-input")
+    const emailv = email.value !== " "? email.value.split("@"):""
+const userName = capitalizeFirstLetter(emailv[0])
+    const disname = displayName.length > 0 ? capitalizeFirstLetter(displayName[0]) : '';
+
+    if (photoURL && disname) {
+        imgElement.src = photoURL
+        greetUser.innerText = `Hello ${disname} 🤗`
+    } else {
+        imgElement.src = "./img/Free_Sample_By_Wix.jpg"
+    greetUser.innerText = `Hello ${userName} 🤗`
+    }
+}
+const textareaEl = document.getElementById("post-input")
+const postButtonEl = document.getElementById("post-btn")
+postButtonEl.addEventListener("click", postButtonPressed)
+const user = auth.currentUser
+    
+        async function addPostToDB(postBody,user) {
+    try {
+
+        const docRef = await addDoc(collection(db, "messages"), {
+            body: postBody,
+        
+            createdAt: serverTimestamp()
+        })
+       
+    } catch (error) {
+        alert(error.message)
+    }
+
+}
+
+/* == Functions - UI Functions == */
+
+function postButtonPressed() {
+    const postBody = textareaEl.value
+    const user = auth.currentUser
+    if (postBody) {
+        addPostToDB(postBody)
+        alert(`Hello message received`)
+        clearInputField(textareaEl)
+    }
+    alert("message cannot be blank")
+}
+  </script>
+  <script src="index.js"></script>
 </body>
 </html>

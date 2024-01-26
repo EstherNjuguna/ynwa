@@ -1,5 +1,5 @@
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.8/firebase-app.esm.js';
+/**import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.8/firebase-app.esm.js';
   import { getAuth, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.esm.js';
 
 const firebaseConfig = {
@@ -12,7 +12,7 @@ const firebaseConfig = {
     measurementId: "G-NSP85GLCFJ"
   };
   const app = initializeApp(firebaseConfig);
-
+console.log(app)
 let auth = getAuth();
 let email =document.querySelector("#email")
 let password =document.querySelector("#password")
@@ -33,4 +33,6 @@ const handleSubmit = (e) => {
   };
   
   submit.addEventListener("click", handleSubmit);
+  */
+
   
