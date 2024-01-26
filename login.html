@@ -142,7 +142,7 @@ import { collection, addDoc,  serverTimestamp } from 'https://www.gstatic.com/fi
  
   /* == UI - Event Listeners == */
   returnSignIn.addEventListener("click", ()=>{
-    signUp.classList.toggle("hide")
+    signUp.classList.toggle("loginhide")
     login.style.display="block"
     googleIcon.style.display="block" 
   })
@@ -151,7 +151,7 @@ import { collection, addDoc,  serverTimestamp } from 'https://www.gstatic.com/fi
   signInButtonEl.addEventListener("click", authSignInWithEmail)
   createAccountButtonEl.addEventListener("click", authCreateAccountWithEmail)
   createButtonEl.addEventListener("click",()=>{
-    signUp.classList.toggle("hide")
+    signUp.classList.toggle("loginhide")
     login.style.display="none"
     googleIcon.style.display="none"
   })
